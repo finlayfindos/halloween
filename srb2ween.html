@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRB2Ween</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    #canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; cursor: none; }
+    #error { display: none; position: fixed; inset: 0; background: #000; color: #f00; font-family: monospace; font-size: 0.85rem; padding: 20px; white-space: pre-wrap; overflow: auto; z-index: 20; }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+  <pre id="error"></pre>
+  <script>
+    // Intercept ALL AudioContext creation so we can resume them on user gesture.
+    // SDL2 creates its own AudioContext internally - this catches it.
+    (function() {
+      var OrigAudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!OrigAudioContext) return;
+      var _contexts = [];
+      var Patched = function(opts) {
+        var ctx = new OrigAudioContext(opts);
+        _contexts.push(ctx);
+        return ctx;
+      };
+      Patched.prototype = OrigAudioContext.prototype;
+      window.AudioContext = window.webkitAudioContext = Patched;
+
+      function resumeAll() {
+        _contexts.forEach(function(c) {
+          if (c.state === 'suspended') c.resume();
+        });
+      }
+      // Resume on any interaction
+      ['click','keydown','touchstart','mousedown'].forEach(function(ev) {
+        document.addEventListener(ev, resumeAll);
+      });
+    })();
+
+    var Module = {
+      canvas: document.getElementById('canvas'),
+      arguments: ['-iwad', 'doom2.wad', '-file', 'doom3.wad', '-width', '640', '-height', '400'],
+      setStatus: function(text) {
+        if (!text) document.getElementById('canvas').focus();
+      },
+      print:    function(t) { console.log('[SRB2Ween] ' + t); },
+      printErr: function(t) { console.warn('[SRB2Ween] ' + t); },
+      onAbort: function(what) {
+        var el = document.getElementById('error');
+        el.textContent = 'Fatal error: ' + what;
+        el.style.display = 'block';
+      },
+    };
+
+    function resize() {
+      var canvas = document.getElementById('canvas');
+      var scale = Math.min(window.innerWidth / 640, window.innerHeight / 400);
+      canvas.style.width  = Math.floor(640 * scale) + 'px';
+      canvas.style.height = Math.floor(400 * scale) + 'px';
+      canvas.width = 640; canvas.height = 400;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+  </script>
+  <script async type="text/javascript" src="srb2ween.js"></script>
+</body>
+</html>
