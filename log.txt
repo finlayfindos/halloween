@@ -1,0 +1,132 @@
+GetArgcArgv() ...
+lpCmdLine is ''
+Myargc: 1
+myargv[0] : 'dummy.exe'
+I_StartupSystem() ...
+D_DoomMain() ...
+ Sep 23 2000                   Doom LEGACY v1.28                       21:44:16 
+DOOM 2: Hell on Earth
+Z_Init: Init zone memory allocation daemon. 
+W_Init: Init WADfiles.
+Added wadfile C:\Users\finli\srb2ween-wasm\web/doom2.wad (2607 lumps)
+Added wadfile C:\Users\finli\srb2ween-wasm\web/doom3.wad (65 lumps)
+===========================================================================
+                   We hope you enjoy this game as
+                     much as we did making it!
+===========================================================================
+I_StartupTimer...
+I_StartupGraphics...
+mode 640 x 480 x 32 bpp
+mode 720 x 480 x 32 bpp
+mode 720 x 576 x 32 bpp
+mode 800 x 600 x 32 bpp
+mode 1024 x 768 x 32 bpp
+mode 1152 x 864 x 32 bpp
+mode 1176 x 664 x 32 bpp
+mode 1280 x 720 x 32 bpp
+mode 1280 x 768 x 32 bpp
+mode 1280 x 800 x 32 bpp
+mode 1280 x 960 x 32 bpp
+mode 1280 x 1024 x 32 bpp
+mode 1360 x 768 x 32 bpp
+mode 1366 x 768 x 32 bpp
+mode 1440 x 1080 x 32 bpp
+mode 1600 x 900 x 32 bpp
+mode 1600 x 1024 x 32 bpp
+mode 1680 x 1050 x 32 bpp
+mode 1920 x 1080 x 32 bpp
+mode 1440 x 900 x 32 bpp
+mode 640 x 480 x 16 bpp
+mode 720 x 480 x 16 bpp
+mode 720 x 576 x 16 bpp
+mode 800 x 600 x 16 bpp
+mode 1024 x 768 x 16 bpp
+mode 1152 x 864 x 16 bpp
+mode 1176 x 664 x 16 bpp
+mode 1280 x 720 x 16 bpp
+mode 1280 x 768 x 16 bpp
+mode 1280 x 800 x 16 bpp
+mode 1280 x 960 x 16 bpp
+mode 1280 x 1024 x 16 bpp
+mode 1360 x 768 x 16 bpp
+mode 1366 x 768 x 16 bpp
+mode 1440 x 1080 x 16 bpp
+mode 1600 x 900 x 16 bpp
+mode 1600 x 1024 x 16 bpp
+mode 1680 x 1050 x 16 bpp
+mode 1920 x 1080 x 16 bpp
+mode 1440 x 900 x 16 bpp
+mode 640 x 480 x 8 bpp
+mode 720 x 480 x 8 bpp
+mode 720 x 576 x 8 bpp
+mode 800 x 600 x 8 bpp
+mode 1024 x 768 x 8 bpp
+mode 1152 x 864 x 8 bpp
+mode 1176 x 664 x 8 bpp
+mode 1280 x 720 x 8 bpp
+mode 1280 x 768 x 8 bpp
+mode 1280 x 800 x 8 bpp
+mode 1280 x 960 x 8 bpp
+mode 1280 x 1024 x 8 bpp
+mode 1360 x 768 x 8 bpp
+mode 1366 x 768 x 8 bpp
+mode 1440 x 1080 x 8 bpp
+mode 1600 x 900 x 8 bpp
+mode 1600 x 1024 x 8 bpp
+mode 1680 x 1050 x 8 bpp
+mode 1920 x 1080 x 8 bpp
+mode 1440 x 900 x 8 bpp
+00: 320x200x1bpp (desc: '320x200W')
+01: 640x480x1bpp (desc: '640x480')
+02: 720x480x1bpp (desc: '720x480')
+03: 720x576x1bpp (desc: '720x576')
+04: 800x600x1bpp (desc: '800x600')
+05: 1024x768x1bpp (desc: '1024x768')
+VID_SetMode(0)
+HU_Init: Setting up heads up display.
+
+executing C:\Users\finli\srb2ween-wasm\web/config.cfg
+Looking for joystick devices:
+none found
+Messages OFFDefault resolution: 640 x 400
+Unknown problem while loading the specified device driver.M_Init: Init miscellaneous info.
+R_Init: Init DOOM refresh daemon - 
+InitTextures...
+InitFlats...
+InitSprites...
+140 sprites added from file C:\Users\finli\srb2ween-wasm\web/doom2.wad
+142 sprites added from file C:\Users\finli\srb2ween-wasm\web/doom3.wad
+
+InitColormaps...D_CheckNetGame: Checking network game status.
+Waiting 1 nodes...
+Player 0 is in the game (node 0)
+player 1 of 1 (1 nodes)
+S_Init: Setting up sound.
+I_StartupSound:  Compacting onboard sound-memory... done
+sound initialised.
+I_InitMusic()
+MIDI product name: Microsoft MIDI Mapper
+MIDI technology: Microsoft MIDI Mapper
+MIDI caps:
+-Direct support for midiStreamOut()
+-Volume control
+10 mixer devices available
+ST_Init: Init status bar.
+I_StartupKeyboard...
+I_StartupMouse...
+Entering main app loop...
+VID_SetMode(1)
+executing autoexec.cfg
+gravity set to 0.5pause
+Warping to map...
+VID_SetMode(4)
+VID_SetMode(4)
+VID_SetMode(5)
+VID_SetMode(5)
+VID_SetMode(5)
+I_ShutdownMouse()
+I_ShutdownKeyboard()
+I_ShutdownMusic: 
+I_ShutdownSound()
+I_ShutdownGraphics()
+I_Quit(): end of logstream.
